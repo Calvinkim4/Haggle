@@ -7,7 +7,7 @@ Web app that a user can safely use to trade with other users. It does not involv
 HTML/CSS, REACT, EXPRESS
 
 # User Stories
-user- Jack Ma
+user- Jack Ma <br/>
 why he's using app- Jack wants to buy a certain type of shoe but does not have money. He checks the app and finds what he is looking for. He requests a trade for the shoes by offering his car. The other user responds with a confirmation, rejection, or a different offer.
 
 # MVP Routes
