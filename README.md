@@ -22,12 +22,12 @@ Why he's using app- Jack wants to buy a certain type of shoe but does not have m
 
 # Wireframe
 
-![alt text](wireframe/wireframe.jpg "Wireframe")
+![alt text](https://user-images.githubusercontent.com/10161700/58830134-9beed080-8617-11e9-9338-e7aaf932651b.jpg "Wireframe")
 
 
 # ERD
 
-![alt text](wireframe/erd.png "erd")
+![alt text](https://user-images.githubusercontent.com/10161700/58830113-91ccd200-8617-11e9-82e9-2f8a9b35bc9b.png "erd")
 
 # Routes
 -get all items from category<br/>

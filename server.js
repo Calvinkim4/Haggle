@@ -1,8 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-
-const { User } = require('./model');
+const { userRouter } = require('./routes/userRouter');
+const { itemRouter } = require('./routes/itemRouter');
+const { Item } = require('./model');
 
 const cors = require('cors');
 
@@ -17,14 +18,31 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/user/:id', async (request, response) => {
-    try {
-      const user = await User.findByPk(request.params.id);
-      response.send(user);
-    } catch (e) {
-      console.log(e.message);
-    }
-  });
+app.use('/user', userRouter);
+
+app.get('/items', async (request, response) =>
+{
+  try {
+    const items = await Item.findAll();
+    response.send({items})
+  } catch (e) {
+    response.status(500).json({ msg: e.message })
+  }
+})
+
+app.get('/items/:category', async (request, response) =>
+{
+  try {
+    const items = await Item.findAll({
+        where: {
+            category: request.params.category
+          }
+    });
+    response.send({items})
+  } catch (e) {
+    response.status(500).json({ msg: e.message })
+  }
+})
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
