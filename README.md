@@ -10,7 +10,17 @@ HTML/CSS, REACT, EXPRESS
 user- Jack Ma <br/>
 why he's using app- Jack wants to buy a certain type of shoe but does not have money. He checks the app and finds what he is looking for. He requests a trade for the shoes by offering his car. The other user responds with a confirmation, rejection, or a different offer.
 
-# MVP Routes
+# MVP
+-user can post items <br/>
+-user can search by category <br/>
+-user can request trade with others <br/>
+-user can delete items <br/>
+-user can update items <br/>
+
+# Post MVP
+-user can sign up and log in
+
+# Routes
 -get all items from category<br/>
 -get all category<br/>
 -get all from user<br/>
@@ -24,3 +34,7 @@ why he's using app- Jack wants to buy a certain type of shoe but does not have m
 
 
 # ERD
+
+
+# Component Structure
+
