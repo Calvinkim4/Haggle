@@ -11,14 +11,14 @@ user- Jack Ma
 why he's using app- Jack wants to buy a certain type of shoe but does not have money. He checks the app and finds what he is looking for. He requests a trade for the shoes by offering his car. The other user responds with a confirmation, rejection, or a different offer.
 
 # MVP Routes
--get all items from category
--get all category
--get all from user
--get item
--get user
--create user
--update item
--delete item
+-get all items from category . 
+-get all category . 
+-get all from user  
+-get item . 
+-get user . 
+-create user . 
+-update item . 
+-delete item . 
 
 # Wireframe
 
