@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
 
 const sequelize = new Sequelize({
   database: 'haggle_db',
@@ -64,6 +65,11 @@ const Item = sequelize.define('item', {
 
 Item.belongsTo(User);
 User.hasMany(Item, {onDelete: 'cascade'});
+
+User.beforeCreate(async (user, options) => {
+  const hashedPassword = await bcrypt.hash(user.password, 12);
+  user.password = hashedPassword;
+});
 
 module.exports = {
   User,

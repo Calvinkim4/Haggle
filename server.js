@@ -4,6 +4,10 @@ const logger = require('morgan');
 const { userRouter } = require('./routes/userRouter');
 const { itemRouter } = require('./routes/itemRouter');
 const { Item } = require('./model');
+const { authRouter } = require('./routes/authRouter')
+const { appRouter } = require('./routes/appRouter')
+const passport = require('passport');
+const { authorized } = require('./auth/auth');
 
 const cors = require('cors');
 
@@ -17,6 +21,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(cors());
+
+app.use('/auth', authRouter);
+app.use('/app', authorized, appRouter);
+app.use(passport.initialize());
 
 app.use('/user', userRouter);
 
@@ -43,6 +51,12 @@ app.get('/items/:category', async (request, response) =>
     response.status(500).json({ msg: e.message })
   }
 })
+
+app.use((err, req, res, next) => {
+  console.log('error', err)
+  res.status(err.status || 500);
+  res.json({ message: err.message });
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
