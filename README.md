@@ -7,8 +7,8 @@ Web app that a user can safely use to trade with other users. It does not involv
 HTML/CSS, REACT, EXPRESS
 
 # User Stories
-user- Jack Ma <br/>
-why he's using app- Jack wants to buy a certain type of shoe but does not have money. He checks the app and finds what he is looking for. He requests a trade for the shoes by offering his car. The other user responds with a confirmation, rejection, or a different offer.
+User- Jack Ma <br/>
+Why he's using app- Jack wants to buy a certain type of shoe but does not have money. He checks the app and finds what he is looking for. He requests a trade for the shoes by offering his car. The other user responds with a confirmation, rejection, or a different offer.
 
 # MVP
 -user can post items <br/>
@@ -20,6 +20,15 @@ why he's using app- Jack wants to buy a certain type of shoe but does not have m
 # Post MVP
 -user can sign up and log in
 
+# Wireframe
+
+![alt text](wireframe/wireframe.jpg "Wireframe")
+
+
+# ERD
+
+![alt text](wireframe/erd.png "erd")
+
 # Routes
 -get all items from category<br/>
 -get all category<br/>
@@ -30,11 +39,15 @@ why he's using app- Jack wants to buy a certain type of shoe but does not have m
 -update item<br/>
 -delete item<br/>
 
-# Wireframe
-
-
-# ERD
-
 
 # Component Structure
+Header<br/>
+Login<br/>
+SignUp<br/>
+Dashboard<br/>
+Market<br/>
+Category<br/>
+Request<br/>
+Respond<br/>
+Footer<br/>
 
