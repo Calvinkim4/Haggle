@@ -15,7 +15,7 @@ itemRouter.get('/', async (request, response) =>
         user_id: userId,
       }
     });
-    response.send({item})
+    response.send(item)
   } catch (e) {
     response.status(500).json({ msg: e.message })
   }
@@ -31,7 +31,7 @@ itemRouter.get('/:id', async (request, response) =>
         id: request.params.id
       }
     });
-    response.send({item})
+    response.send(item)
   } catch (e) {
     response.status(500).json({ msg: e.message })
   }
@@ -54,7 +54,7 @@ itemRouter.put('/:id', async (request, response) => {
   try {
     const item = await Item.findByPk(request.params.id);
     if (item) await item.update(request.body);
-    response.send({item});
+    response.send(item);
   } catch(e) {
     console.log(e.message);
   }

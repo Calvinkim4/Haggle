@@ -32,7 +32,7 @@ app.get('/items', async (request, response) =>
 {
   try {
     const items = await Item.findAll();
-    response.send({items})
+    response.send(items)
   } catch (e) {
     response.status(500).json({ msg: e.message })
   }
@@ -46,7 +46,7 @@ app.get('/items/:category', async (request, response) =>
             category: request.params.category
           }
     });
-    response.send({items})
+    response.send(items)
   } catch (e) {
     response.status(500).json({ msg: e.message })
   }
