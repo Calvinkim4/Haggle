@@ -7,8 +7,8 @@ class Header extends Component {
     render() {
         return(
             <div>
-                <Link to='/dashboard'>Dashboard</Link>
-                <Link to='/marketplace'>MarketPlace</Link>
+                {/* <Link to='/dashboard'>Dashboard</Link> */}
+                {/* <Link to='/marketplace'>MarketPlace</Link> */}
                 {/* <Redirect from="/" to="/dashboard" />  */}
                 
                 {/* <main>

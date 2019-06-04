@@ -40,10 +40,15 @@ body {
   border: 4px solid white;
 }
 
-.nav-bar > li {
+.nav-bar-link {
+  text-decoration: none;
+}
+
+.nav-bar-link > li {
   display: inline;
   padding: 20px;
   font-size: 35px;
+  color: black;
 }
 
 .contact-div {

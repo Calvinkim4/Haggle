@@ -38,7 +38,7 @@ class Signup extends Component {
 
   render () {
     const { showError } = this.state;
-    const { isSignedIn } = this.props;
+    // const { isSignedIn } = this.props;
 
     let errorMessage
 
