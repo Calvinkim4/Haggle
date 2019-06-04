@@ -38,7 +38,7 @@ app.get('/items', async (request, response) =>
   }
 })
 
-app.get('/items/:category', async (request, response) =>
+app.get('/category/:category', async (request, response) =>
 {
   try {
     const items = await Item.findAll({

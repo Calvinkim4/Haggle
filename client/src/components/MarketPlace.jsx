@@ -1,7 +1,32 @@
 import React, { Component } from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class MarketPlace extends Component {
+    constructor() {
+        super()
+        this.state = {
+            category: ''
+        }
+    }
+
+    // componentDidMount = () => {
+    //     const savedCategory = localStorage.getItem('category') === 'true';
+    //     this.setState({
+    //         category: savedCategory
+    //     })
+
+    //     console.log(localStorage.getItem('category'))
+    // }
+
+    // setCategory = (event) => {
+    //     let value = event.target.type;
+    //     this.setState({
+    //         category: value
+    //     })
+
+    //     localStorage.setItem('category', value);
+    //  }
+
     render() {
         return (
             <div>
@@ -16,6 +41,8 @@ class MarketPlace extends Component {
                 <Link to='/category' type="Materials" onClick={this.props.setCategory}>Materials</Link>
                 <Link to='/category' type="Furniture" onClick={this.props.setCategory}>Furniture</Link>
                 <Link to='/category' type="Antiques" onClick={this.props.setCategory}>Antiques</Link>
+
+                {/* <h1>{this.props.category}</h1> */}
             </div>
         )
     }

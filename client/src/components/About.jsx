@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import Contact from './Contact';
 
 class About extends Component {
+
+    // componentDidMount = () => {
+    //     localStorage.clear();
+    // }
+    
     render(){
         return(
             <div>

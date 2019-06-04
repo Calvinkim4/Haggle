@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import authService from './services/authService';
 import { login, getProfile, signUp } from './services/apiService';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Dashboard from './components/Dashboard';
+// import Login from './components/Login';
+// import Signup from './components/Signup';
+// import Dashboard from './components/Dashboard';
 import MarketPlace from './components/MarketPlace';
 import { Link, Route, Redirect } from 'react-router-dom';
-import Header from './components/Header';
+// import Header from './components/Header';
 import SpecificCategory from './components/SpecificCategory';
 import Container from './components/Container';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import Footer from './components/Footer';
 import About from './components/About';
 
@@ -19,7 +19,8 @@ class App extends Component {
     super();
     this.state = {
       isSignedIn: false,
-      user: {}
+      user: {},
+      category: ''
     }
   }
 
@@ -27,7 +28,10 @@ class App extends Component {
     try {
       const fetchedUser = await getProfile();
 
+      const savedCategory = localStorage.getItem('category');
+
       this.setState({
+        category: savedCategory,
         isSignedIn: authService.isAuthenticated(),
         user: fetchedUser
       })
@@ -71,6 +75,15 @@ class App extends Component {
     }
   }
 
+  setCategory = (event) => {
+      let value = event.target.type;
+      this.setState({
+          category: value
+      })
+
+      localStorage.setItem('category', value);
+   }
+
 
   render() {
     const { isSignedIn } = this.state  
@@ -83,54 +96,10 @@ class App extends Component {
           <Link className='nav-bar-link' to='/about'><li>About</li></Link>
         </nav>
 
-        {/* <About /> */}
-
-        {/* <Contact /> */}
-        {/* <div className='contact-div'> */}
-          {/* { !isSignedIn && */}
-            {/* <div className='register'> */}
-              {/* <div className='homepage'>
-                <Login isSignedIn={isSignedIn} handleLogin={this.loginUser}/>
-
-                <Signup isSignedIn={isSignedIn} handleSignUp={this.signUpUser}/>
-              </div> */}
-            {/* </div> */}
-          {/* } */}
-
-          {/* // { isSignedIn && */}
-            {/* <div> */}
-              {/* <button className='signout-btn' onClick={this.signOut}> Sign out</button> */}
-              {/* <Header /> */}
-              {/* <Redirect from="/" to="/dashboard" /> */}
-              {/* <Dashboard userId={this.state.user.id}/> */}
-
-
-              {/* <Container userId={this.state.user.id}  isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser}/> */}
-
-              {/* <main>
-                  <Route exact path='/dashboard' render={(props) => <Dashboard {...props} userId={this.state.user.id} />}/>  
-                  <Route exact path='/marketplace' component={MarketPlace}/>    
-                  <Route exact path='/category' component={SpecificCategory}/>    
-              </main> */}
-            {/* </div> */}
-            
-          {/* } */}
-        {/* </div> */}
-        
-        {/* <Link to='/dashboard'>Dashboard</Link> */}
-        {/* <div className='homepage'>
-          <Login />
-          <Signup />
-        </div> */}
-
-        {/* <main>
-          <Route exact path='/dashboard' render={(props) => <Dashboard {...props} userId={this.state.user.id} />}/>  
-          <Route exact path='/marketplace' component={MarketPlace}/>
-        </main> */}
-
         <main>
-          {/* <Redirect from="/" to="/marketplace" /> */}
-          <Route exact path='/marketplace' render={(props) => <MarketPlace {...props}/>}/>    
+          <Route exact path="/" render={() => (<Redirect to="/marketplace"/>)}/>
+          <Route exact path='/marketplace' render={(props) => <MarketPlace {...props} setCategory={this.setCategory} category={this.state.category}/>}/> 
+          <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category}/>}/>    
           <Route exact path='/about' component={About}/>
           <Route exact path='/logsign' render={(props) => <Container userId={this.state.user.id} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} {...props}/>}/>
         </main>
