@@ -31,6 +31,7 @@ class Login extends Component {
         showError: true 
       })
     }
+    
   }
 
   handleTextInput = async (event) => {
@@ -56,9 +57,9 @@ class Login extends Component {
       )
     }
 
-    if (isSignedIn) {
-      return <Redirect to='/dashboard' />
-    }
+    // if (isSignedIn) {
+    //   return <Redirect to='/marketplace' />
+    // }
 
     return (
       <div>

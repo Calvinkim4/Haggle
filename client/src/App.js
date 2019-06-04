@@ -8,6 +8,11 @@ import Dashboard from './components/Dashboard';
 import MarketPlace from './components/MarketPlace';
 import { Link, Route, Redirect } from 'react-router-dom';
 import Header from './components/Header';
+import SpecificCategory from './components/SpecificCategory';
+import Container from './components/Container';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import About from './components/About';
 
 class App extends Component {
   constructor() {
@@ -50,6 +55,7 @@ class App extends Component {
     } catch (error) {
       throw error
     }
+
   }
 
   signUpUser = async (credentials) => {
@@ -65,12 +71,24 @@ class App extends Component {
     }
   }
 
+
   render() {
     const { isSignedIn } = this.state  
     return (
       <div className="App">
-        <h1>Haggle</h1>
-        { !isSignedIn &&
+        <h1 className='title'>Haggle</h1>
+        <nav className='nav-bar'>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>LogIn/SignUp</li>
+        </nav>
+
+        <About />
+
+        <Contact />
+        <div className='contact-div'>
+          { !isSignedIn &&
             <div className='register'>
               <div className='homepage'>
                 <Login isSignedIn={isSignedIn} handleLogin={this.loginUser}/>
@@ -83,17 +101,23 @@ class App extends Component {
           { isSignedIn &&
             <div>
               <button className='signout-btn' onClick={this.signOut}> Sign out</button>
-              <Header userId={this.state.user.id}/>
+              {/* <Header /> */}
               {/* <Redirect from="/" to="/dashboard" /> */}
               {/* <Dashboard userId={this.state.user.id}/> */}
 
-              <main>
+
+              <Container userId={this.state.user.id}/>
+
+              {/* <main>
                   <Route exact path='/dashboard' render={(props) => <Dashboard {...props} userId={this.state.user.id} />}/>  
                   <Route exact path='/marketplace' component={MarketPlace}/>    
-              </main>
+                  <Route exact path='/category' component={SpecificCategory}/>    
+              </main> */}
             </div>
             
           }
+        </div>
+        
         {/* <Link to='/dashboard'>Dashboard</Link> */}
         {/* <div className='homepage'>
           <Login />
@@ -104,6 +128,8 @@ class App extends Component {
           <Route exact path='/dashboard' render={(props) => <Dashboard {...props} userId={this.state.user.id} />}/>  
           <Route exact path='/marketplace' component={MarketPlace}/>
         </main> */}
+
+        <Footer />
         
       </div>
     )

@@ -50,9 +50,9 @@ class Signup extends Component {
       )
     }
 
-    if (isSignedIn) {
-      return <Redirect to='/dashboard' />
-    }
+    // if (isSignedIn) {
+    //   return <Redirect to='/dashboard' />
+    // }
 
     return (
       <div>
