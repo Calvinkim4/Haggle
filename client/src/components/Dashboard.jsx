@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { createItem, getAllItems, getItem, updateItem, deleteItem} from '../services/itemService';
+import MarketPlace from './MarketPlace';
+import { Link, Route } from 'react-router-dom';
 
 class Dashboard extends Component {
     constructor(){
@@ -107,7 +109,7 @@ class Dashboard extends Component {
 
     render() {
 
-        const allItems = this.state.items.map(item => {
+        const allItems = this.state.items ?  this.state.items.map(item => {
             return (
                 <div key={item.id}>
                    <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
@@ -116,17 +118,17 @@ class Dashboard extends Component {
                 </div>
                 
             )
-        })
+        }): null;
 
         const modal = (this.state.show && this.state.updatedItem) ? 
             <div className='modal'>
               <section className="modal-content">
               <form onSubmit={this.onUpdateClick}>
                 <label htmlFor='name'>
-                  <input type='text' name='name' placeholder={this.state.updatedItem.name} onChange={ this.onItemFormChange }/>
+                  <input type='text' name='name' placeholder={this.state.updatedItem.name} onChange={ this.onItemFormChange } required/>
                 </label>
                 <label htmlFor='category'>
-                  <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange }/>
+                  <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/>
                 </label>
                 <button type='submit'>Update Item</button>
               </form>
@@ -138,11 +140,11 @@ class Dashboard extends Component {
             <div>
                 <form className='login-form' onSubmit={this.handleSubmitForm}>
                     <div>
-                        <input className='login-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name'/>
+                        <input className='login-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name' required/>
                     </div>
 
                     <div>
-                        <input className='login-input' type='text' name='category' onChange={this.handleTextInput} placeholder='Category'/>
+                        <input className='login-input' type='text' name='category' onChange={this.handleTextInput} placeholder='Category' required/>
                     </div>
 
                     <button className='login-btn'>Create</button>

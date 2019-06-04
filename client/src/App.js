@@ -5,7 +5,9 @@ import { login, getProfile, signUp } from './services/apiService';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
-// import { Link, Route } from 'react-router-dom';
+import MarketPlace from './components/MarketPlace';
+import { Link, Route, Redirect } from 'react-router-dom';
+import Header from './components/Header';
 
 class App extends Component {
   constructor() {
@@ -80,9 +82,17 @@ class App extends Component {
 
           { isSignedIn &&
             <div>
-               <button className='signout-btn' onClick={this.signOut}> Sign out</button>
-              <Dashboard userId={this.state.user.id}/>
+              <button className='signout-btn' onClick={this.signOut}> Sign out</button>
+              <Header userId={this.state.user.id}/>
+              {/* <Redirect from="/" to="/dashboard" /> */}
+              {/* <Dashboard userId={this.state.user.id}/> */}
+
+              <main>
+                  <Route exact path='/dashboard' render={(props) => <Dashboard {...props} userId={this.state.user.id} />}/>  
+                  <Route exact path='/marketplace' component={MarketPlace}/>    
+              </main>
             </div>
+            
           }
         {/* <Link to='/dashboard'>Dashboard</Link> */}
         {/* <div className='homepage'>
@@ -91,7 +101,8 @@ class App extends Component {
         </div> */}
 
         {/* <main>
-          <Route exact path='/dashboard' component={Dashboard}/>
+          <Route exact path='/dashboard' render={(props) => <Dashboard {...props} userId={this.state.user.id} />}/>  
+          <Route exact path='/marketplace' component={MarketPlace}/>
         </main> */}
         
       </div>
