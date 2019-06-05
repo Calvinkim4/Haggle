@@ -90,6 +90,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className='title'>Haggle</h1>
+        <h2>Trade Shit For Better Shit</h2>
         <nav className='nav-bar'>
           <Link className='nav-bar-link' to='/home'><li>Home</li></Link>
           <Link className='nav-bar-link' to='/marketplace'><li>MarketPlace</li></Link>

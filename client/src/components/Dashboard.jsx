@@ -158,7 +158,7 @@ class Dashboard extends Component {
             <div>
                 <ul id="messages"></ul>
                 <form action="">
-                <input id="m" autocomplete="off" /><button>Send</button>
+                <input id="m" autoComplete="off" /><button>Send</button>
                 </form>
                 <form className='login-form' onSubmit={this.handleSubmitForm}>
                     <div>
