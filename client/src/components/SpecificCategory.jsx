@@ -31,6 +31,8 @@ class SpecificCategory extends Component {
             return (
                 <div key={item.id}>
                    <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
+                   <h3 id={item.id} name={item.name} category={item.category}>{item.category}</h3>
+                   <img className='item-image' src={item.image} alt='item'/>
                     {/* <button value={item.id} onClick={this.showModal}>Update</button> 
                     <button value={item.id} onClick={this.onDeleteClick}>Delete</button>  */}
                 </div>

@@ -116,6 +116,7 @@ class Dashboard extends Component {
                 <div key={item.id}>
                    <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
                    <h3 id={item.id} name={item.name} category={item.category}>{item.category}</h3>
+                   <img className='item-image' src={item.image} alt='item'/>
                     <button value={item.id} onClick={this.showModal}>Update</button> 
                     <button value={item.id} onClick={this.onDeleteClick}>Delete</button> 
                 </div>
@@ -131,7 +132,22 @@ class Dashboard extends Component {
                   <input type='text' name='name' placeholder={this.state.updatedItem.name} onChange={ this.onItemFormChange } required/>
                 </label>
                 <label htmlFor='category'>
-                  <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/>
+                    <select onChange={this.handleTextInput} name='category' required>
+                        <option value=''> select an option </option>
+                        <option>Auto</option>
+                        <option>Utensils</option>
+                        <option>Electronics</option>
+                        <option>Aparrel</option>
+                        <option>Jewelry</option>
+                        <option>Housing</option>
+                        <option>Gaming</option>
+                        <option>Services</option>
+                        <option>Materials</option>
+                        <option>Furniture</option>
+                        <option>Antiques</option>
+                        <option>Junk</option>
+                    </select>
+                  {/* <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/> */}
                 </label>
                 <button type='submit'>Update Item</button>
               </form>
@@ -149,6 +165,7 @@ class Dashboard extends Component {
                     <div>
                         <select onChange={this.handleTextInput} name='category' required>
                             <option value=''> select an option </option>
+                            <option>Auto</option>
                             <option>Utensils</option>
                             <option>Electronics</option>
                             <option>Aparrel</option>
@@ -159,6 +176,7 @@ class Dashboard extends Component {
                             <option>Materials</option>
                             <option>Furniture</option>
                             <option>Antiques</option>
+                            <option>Junk</option>
                         </select>
                         {/* <input className='login-input' type='text' name='category' onChange={this.handleTextInput} placeholder='Category' required/> */}
                     </div>

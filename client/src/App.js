@@ -101,7 +101,7 @@ class App extends Component {
           <Route exact path='/marketplace' render={(props) => <MarketPlace {...props} setCategory={this.setCategory} category={this.state.category}/>}/> 
           <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category}/>}/>    
           <Route exact path='/about' component={About}/>
-          <Route exact path='/logsign' render={(props) => <Container userId={this.state.user.id} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} {...props}/>}/>
+          <Route exact path='/logsign' render={(props) => <Container userId={this.state.user.id} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} signOut={this.signOut} {...props}/>}/>
         </main>
 
         <Footer />
