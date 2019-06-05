@@ -91,16 +91,16 @@ class App extends Component {
       <div className="App">
         <h1 className='title'>Haggle</h1>
         <nav className='nav-bar'>
+          <Link className='nav-bar-link' to='/home'><li>Home</li></Link>
           <Link className='nav-bar-link' to='/marketplace'><li>MarketPlace</li></Link>
           <Link className='nav-bar-link' to='logsign'><li>LogIn/SignUp</li></Link>
-          <Link className='nav-bar-link' to='/about'><li>About</li></Link>
         </nav>
 
         <main>
-          <Route exact path="/" render={() => (<Redirect to="/marketplace"/>)}/>
+          <Route exact path="/" render={() => (<Redirect to="/home"/>)}/>
           <Route exact path='/marketplace' render={(props) => <MarketPlace {...props} setCategory={this.setCategory} category={this.state.category}/>}/> 
           <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category}/>}/>    
-          <Route exact path='/about' component={About}/>
+          <Route exact path='/home' component={About}/>
           <Route exact path='/logsign' render={(props) => <Container userId={this.state.user.id} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} signOut={this.signOut} {...props}/>}/>
         </main>
 

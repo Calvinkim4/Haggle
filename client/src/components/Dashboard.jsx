@@ -47,7 +47,6 @@ class Dashboard extends Component {
             return { [fieldName]: value }
         })
 
-        console.log(value)
     }
 
     showModal = async (event) => {
@@ -142,7 +141,7 @@ class Dashboard extends Component {
                         <option>Housing</option>
                         <option>Gaming</option>
                         <option>Services</option>
-                        <option>Materials</option>
+                        <option>Tools</option>
                         <option>Furniture</option>
                         <option>Antiques</option>
                         <option>Junk</option>
@@ -157,6 +156,10 @@ class Dashboard extends Component {
 
         return (
             <div>
+                <ul id="messages"></ul>
+                <form action="">
+                <input id="m" autocomplete="off" /><button>Send</button>
+                </form>
                 <form className='login-form' onSubmit={this.handleSubmitForm}>
                     <div>
                         <input className='login-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name' required/>
@@ -173,7 +176,7 @@ class Dashboard extends Component {
                             <option>Housing</option>
                             <option>Gaming</option>
                             <option>Services</option>
-                            <option>Materials</option>
+                            <option>Tools</option>
                             <option>Furniture</option>
                             <option>Antiques</option>
                             <option>Junk</option>

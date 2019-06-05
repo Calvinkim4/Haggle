@@ -10,7 +10,7 @@ const api = axios.create({
 export const createItem = async (id, data) => {
     try {
         const response = await api.post(`/user/${id}/items`, data);
-        return response.data.entry;
+        return response.data;
     } catch (e) {
         console.log(e.message)
     }
