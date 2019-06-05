@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { getAllFromCategory } from '../services/categoryService';
+import SpecificItem from './SpecificItem';
 
 class SpecificCategory extends Component {
     constructor(props){
         super(props)
         this.state = {
-            items: []
-            // category: props.category
+            items: [],
+            category: props.category
         }
     }
 
@@ -15,6 +16,7 @@ class SpecificCategory extends Component {
             this.setState({
                 items: allItems
             })
+
     }
 
     componentDidUpdate = async (prevProps, prevState) => {
@@ -28,20 +30,11 @@ class SpecificCategory extends Component {
 
     render() {
         const allItems = this.state.items ?  this.state.items.map(item => {
-            return (
-                <div key={item.id}>
-                   <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
-                   <h3 id={item.id} name={item.name} category={item.category}>{item.category}</h3>
-                   <img className='item-image' src={item.image} alt='item'/>
-                    {/* <button value={item.id} onClick={this.showModal}>Update</button> 
-                    <button value={item.id} onClick={this.onDeleteClick}>Delete</button>  */}
-                </div>
-                
-            )
+            return <SpecificItem item={item} key={item.id}/>   
         }): null;
         return(
             <div>
-                <h1>{this.props.category}</h1>
+                {/* <h1>{this.props.category}</h1> */}
                 {allItems}
             </div>
         )

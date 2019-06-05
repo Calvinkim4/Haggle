@@ -184,6 +184,10 @@ class Dashboard extends Component {
                         {/* <input className='login-input' type='text' name='category' onChange={this.handleTextInput} placeholder='Category' required/> */}
                     </div>
 
+                    <div>
+                        <input type='file' name='image' onChange={this.handleTextInput}/>
+                    </div>
+
                     <button className='login-btn'>Create</button>
                 </form>
                 {allItems}

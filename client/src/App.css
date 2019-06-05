@@ -30,6 +30,7 @@ body {
 .title {
   font-size: 80px;
   margin: 40px;
+  color: black;
 }
 
 .nav-bar {
@@ -170,9 +171,14 @@ input {
 }
 
 .item-image {
-  width: 700px;
-  height: 500px;
+  width: 300px;
+  height: 200px;
   object-fit: cover;
+}
+
+.specific-item-div {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .category-container {
