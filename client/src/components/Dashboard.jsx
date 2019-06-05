@@ -185,7 +185,7 @@ class Dashboard extends Component {
                     </div>
 
                     <div>
-                        <input type='file' name='image' onChange={this.handleTextInput}/>
+                        {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
                     </div>
 
                     <button className='login-btn'>Create</button>
