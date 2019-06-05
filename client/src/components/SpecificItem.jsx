@@ -7,6 +7,7 @@ class SpecificItem extends Component {
             <div key={item.id} className='specific-item-div'>
                 <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
                 <h3 id={item.id} name={item.name} category={item.category}>{item.category}</h3>
+                <p id={item.id} name={item.name} category={item.category}>{item.description}</p>
                 <img className='item-image' src={item.image} alt='item'/>
             </div>
         )

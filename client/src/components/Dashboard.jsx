@@ -10,6 +10,8 @@ class Dashboard extends Component {
             items: [],
             name: '',
             category: '',
+            image: '',
+            description: '',
             show: false,
             updatedItem: {}
         }
@@ -29,7 +31,9 @@ class Dashboard extends Component {
 
         let item = {
             name: name,
-            category: category
+            category: category.toLowerCase(),
+            image: this.state.image,
+            description: this.state.description
           }
     
         await createItem(this.props.userId, item);
@@ -72,7 +76,9 @@ class Dashboard extends Component {
     
         let updatedItem = {
           name: this.state.name,
-          category: this.state.category
+          category: this.state.category.toLowerCase(),
+          image: this.state.image,
+          description: this.state.description
         }
     
         await updateItem(this.props.userId, id, updatedItem);
@@ -105,6 +111,8 @@ class Dashboard extends Component {
           this.setState({
             items: items
           })
+
+        //   localStorage.clear();
     }
 
 
@@ -115,6 +123,7 @@ class Dashboard extends Component {
                 <div key={item.id}>
                    <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
                    <h3 id={item.id} name={item.name} category={item.category}>{item.category}</h3>
+                   <p id={item.id} name={item.name} category={item.category}>{item.description}</p>
                    <img className='item-image' src={item.image} alt='item'/>
                     <button value={item.id} onClick={this.showModal}>Update</button> 
                     <button value={item.id} onClick={this.onDeleteClick}>Delete</button> 
@@ -148,6 +157,16 @@ class Dashboard extends Component {
                     </select>
                   {/* <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/> */}
                 </label>
+
+                <div>
+                    <textarea name="description" rows="10" cols="30" onChange={this.handleTextInput}/>
+                </div>
+
+                <div>
+                    {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
+                    <input className='login-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
+                </div>
+
                 <button type='submit'>Update Item</button>
               </form>
                 <button onClick={this.hideModal}>Close</button>
@@ -185,7 +204,12 @@ class Dashboard extends Component {
                     </div>
 
                     <div>
+                        <textarea name="description" rows="10" cols="30" onChange={this.handleTextInput}/>
+                    </div>
+
+                    <div>
                         {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
+                        <input className='login-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
                     </div>
 
                     <button className='login-btn'>Create</button>

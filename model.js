@@ -56,6 +56,9 @@ const Item = sequelize.define('item', {
   image: {
     type: Sequelize.STRING
   },
+  description: {
+    type: Sequelize.TEXT
+  },
   request: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
