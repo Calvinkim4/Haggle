@@ -9,15 +9,16 @@ const { appRouter } = require('./routes/appRouter')
 const passport = require('passport');
 const { authorized } = require('./auth/auth');
 
+const io = require('socket.io');
+const path = require('path');
+
 const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
-
+const server = require('http').createServer(app);
+const socketIo = io(server);
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
@@ -62,10 +63,21 @@ app.use((err, req, res, next) => {
   res.json({ message: err.message });
 });
 
-io.on('connection', function(socket){
-  console.log('a user connected');
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
 
-http.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+socketIo.on('connection', socket => {
+  const username = socket.handshake.query.username;
+  console.log(`${username} connected`);
+
+  socket.on('client:message', data => {
+    console.log(`${data.username}: ${data.message}`);
+
+    socket.broadcast.emit('server:message', data);
+  });
+
+  socket.on('disconnect', () => {
+    console.log(`${username} disconnected`);
+  });
 });

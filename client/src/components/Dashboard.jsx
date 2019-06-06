@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { createItem, getAllItems, getItem, updateItem, deleteItem} from '../services/itemService';
+import ChatBox from './ChatBox';
 // import MarketPlace from './MarketPlace';
 // import { Link, Route } from 'react-router-dom';
 
@@ -217,6 +218,8 @@ class Dashboard extends Component {
                 {allItems}
 
                  {modal}
+
+                 <ChatBox />
 
             </div>
         )
