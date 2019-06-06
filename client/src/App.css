@@ -259,19 +259,19 @@ input {
 
 .about-container {
   font-size: 20px;
-  width: 40%;
+  width: 400px;
   float: left;
   text-align: center;
-  margin: 30px;
+  margin: 30px 30px 30px 200px;
   color: white;
 }
 
 .contact-container {
   font-size: 20px;
-  width: 40%;
+  width: 400px;
   float: right;
   text-align: center;
-  margin: 30px;
+  margin: 30px 130px 30px 30px;
   color: white;
 }
 
