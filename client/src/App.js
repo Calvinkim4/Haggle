@@ -100,16 +100,16 @@ class App extends Component {
         <Link className='nav-bar-link' to='/home'><h1 className='title'>Haggle</h1></Link>
         <h2>Trade <span className='shit'>Shit</span> For Better <span className='shit'>Shit</span></h2>
         <nav className='nav-bar'>
-          <Link className='nav-bar-link' to='/home'><li>Home</li></Link>
+          {/* <Link className='nav-bar-link' to='/home'><li>Home</li></Link> */}
           <Link className='nav-bar-link' to='/marketplace'><li>MarketPlace</li></Link>
           <Link className='nav-bar-link' to='dashboard'><li>{this.returnNavName(isSignedIn)}</li></Link>
         </nav>
 
         <main>
-          <Route exact path="/" render={() => (<Redirect to="/home"/>)}/>
+          <Route exact path="/" render={() => (<Redirect to="/marketplace"/>)}/>
           <Route exact path='/marketplace' render={(props) => <MarketPlace {...props} setCategory={this.setCategory} category={this.state.category}/>}/> 
           <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category}/>}/>    
-          <Route exact path='/home' component={About}/>
+          {/* <Route exact path='/home' component={About}/> */}
           <Route exact path='/dashboard' render={(props) => <Container userId={this.state.user.id} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} signOut={this.signOut} {...props}/>}/>
         </main>
 
