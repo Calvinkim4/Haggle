@@ -42,6 +42,8 @@ class Dashboard extends Component {
         this.setState({
             items: items
         })
+
+        this.eraseInputs();
     }
 
     handleTextInput = (event) => {
@@ -60,6 +62,10 @@ class Dashboard extends Component {
         this.setState({
             show: true,
             updatedItem: item,
+            name: item.name,
+            category: item.category,
+            description: item.description,
+            image: item.image,
             id: id
         });
 
@@ -116,6 +122,14 @@ class Dashboard extends Component {
         //   localStorage.clear();
     }
 
+    eraseInputs = () => { 
+        this.setState({
+            name: '',
+            category: '',
+            description: '',
+            image: ''
+        });
+      }
 
     render() {
 
@@ -138,34 +152,34 @@ class Dashboard extends Component {
               <section className="modal-content">
               <form onSubmit={this.onUpdateClick}>
                 <label htmlFor='name'>
-                  <input type='text' name='name' placeholder={this.state.updatedItem.name} onChange={ this.onItemFormChange } required/>
+                  <input type='text' name='name' value={this.state.name} onChange={ this.onItemFormChange } required/>
                 </label>
                 <label htmlFor='category'>
-                    <select onChange={this.handleTextInput} name='category' required>
+                    <select value={this.state.category} onChange={this.handleTextInput} name='category' required>
                         <option value=''> select an option </option>
-                        <option>Auto</option>
-                        <option>Utensils</option>
-                        <option>Electronics</option>
-                        <option>Aparrel</option>
-                        <option>Jewelry</option>
-                        <option>Housing</option>
-                        <option>Gaming</option>
-                        <option>Services</option>
-                        <option>Tools</option>
-                        <option>Furniture</option>
-                        <option>Antiques</option>
-                        <option>Junk</option>
+                        <option value='auto'>Auto</option>
+                        <option value='utensils'>Utensils</option>
+                        <option value='electronics'>Electronics</option>
+                        <option value='aparrel'>Aparrel</option>
+                        <option value='jewelry'>Jewelry</option>
+                        <option value='housing'>Housing</option>
+                        <option value='gaming'>Gaming</option>
+                        <option value='services'>Services</option>
+                        <option value='tools'>Tools</option>
+                        <option value='furniture'>Furniture</option>
+                        <option value='antiques'>Antiques</option>
+                        <option value='junk'>Junk</option>
                     </select>
                   {/* <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/> */}
                 </label>
 
                 <div>
-                    <textarea name="description" rows="10" cols="30" onChange={this.handleTextInput}/>
+                    <textarea name="description" rows="10" cols="30" value={this.state.description} onChange={this.handleTextInput}/>
                 </div>
 
                 <div>
                     {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
-                    <input className='login-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
+                    <input className='login-input' type='text' name='image' onChange={this.handleTextInput} value={this.state.image} required/>
                 </div>
 
                 <button type='submit'>Update Item</button>
@@ -176,41 +190,37 @@ class Dashboard extends Component {
 
         return (
             <div>
-                <ul id="messages"></ul>
-                <form action="">
-                <input id="m" autoComplete="off" /><button>Send</button>
-                </form>
                 <form className='login-form' onSubmit={this.handleSubmitForm}>
                     <div>
-                        <input className='login-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name' required/>
+                        <input value={this.state.name} className='login-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name' required/>
                     </div>
 
                     <div>
-                        <select onChange={this.handleTextInput} name='category' required>
+                        <select value={this.state.category} onChange={this.handleTextInput} name='category' required>
                             <option value=''> select an option </option>
-                            <option>Auto</option>
-                            <option>Utensils</option>
-                            <option>Electronics</option>
-                            <option>Aparrel</option>
-                            <option>Jewelry</option>
-                            <option>Housing</option>
-                            <option>Gaming</option>
-                            <option>Services</option>
-                            <option>Tools</option>
-                            <option>Furniture</option>
-                            <option>Antiques</option>
-                            <option>Junk</option>
+                            <option value='auto'>Auto</option>
+                            <option value='utensils'>Utensils</option>
+                            <option value='electronics'>Electronics</option>
+                            <option value='aparrel'>Aparrel</option>
+                            <option value='jewelry'>Jewelry</option>
+                            <option value='housing'>Housing</option>
+                            <option value='gaming'>Gaming</option>
+                            <option value='services'>Services</option>
+                            <option value='tools'>Tools</option>
+                            <option value='furniture'>Furniture</option>
+                            <option value='antiques'>Antiques</option>
+                            <option value='junk'>Junk</option>
                         </select>
                         {/* <input className='login-input' type='text' name='category' onChange={this.handleTextInput} placeholder='Category' required/> */}
                     </div>
 
                     <div>
-                        <textarea name="description" rows="10" cols="30" onChange={this.handleTextInput}/>
+                        <textarea value={this.state.description} name="description" rows="10" cols="30" onChange={this.handleTextInput} placeholder='Description...'/>
                     </div>
 
                     <div>
                         {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
-                        <input className='login-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
+                        <input value={this.state.image} className='login-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
                     </div>
 
                     <button className='login-btn'>Create</button>

@@ -12,7 +12,6 @@ import SpecificCategory from './components/SpecificCategory';
 import Container from './components/Container';
 // import Contact from './components/Contact';
 import Footer from './components/Footer';
-import About from './components/About';
 
 class App extends Component {
   constructor() {

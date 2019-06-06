@@ -9,6 +9,36 @@ const user1 = await User.create({
   password: 'password'
 })
 
+const user2 = await User.create({
+  username: "yahoo2",
+  email: 'wowee2@fakemail.com',
+  password: 'password'
+})
+
+const user3 = await User.create({
+  username: "yahoo3",
+  email: 'wowee3@fakemail.com',
+  password: 'password'
+})
+
+const user4 = await User.create({
+  username: "yahoo4",
+  email: 'wowee4@fakemail.com',
+  password: 'password'
+})
+
+const user5 = await User.create({
+  username: "yahoo5",
+  email: 'wowee5@fakemail.com',
+  password: 'password'
+})
+
+const user6 = await User.create({
+  username: "yahoo6",
+  email: 'wowee6@fakemail.com',
+  password: 'password'
+})
+
 const item1 = await Item.create({
   name: "hammer",
   category: "Tools",
@@ -35,20 +65,6 @@ const item3 = await Item.create({
   request: false,
   sent: false
 })
-
-// const item4 = await Item.create({
-//   name: "spoon",
-//   category: "utensils",
-//   request: false,
-//   sent: false
-// })
-
-// const item5 = await Item.create({
-//   name: "spork",
-//   category: "utensils",
-//   request: false,
-//   sent: false
-// })
 
 
 await item1.setUser(user1);
