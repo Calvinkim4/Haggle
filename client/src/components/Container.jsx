@@ -37,7 +37,7 @@ class Container extends Component {
 
                     { this.props.isSignedIn &&
                         <div>
-                        <button className='signout-btn' onClick={this.props.signOut}> Sign out</button>
+                        <button className='signout-button' onClick={this.props.signOut}> Sign out</button>
                         <Dashboard userId={this.props.userId}/>
 
                         </div>

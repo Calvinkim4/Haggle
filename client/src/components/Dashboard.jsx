@@ -190,13 +190,13 @@ class Dashboard extends Component {
 
         return (
             <div>
-                <form className='login-form' onSubmit={this.handleSubmitForm}>
+                <form className='create-form' onSubmit={this.handleSubmitForm}>
                     <div>
-                        <input value={this.state.name} className='login-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name' required/>
+                        <input value={this.state.name} className='create-input' type='text' name='name' onChange={this.handleTextInput} placeholder='Name' required/>
                     </div>
 
                     <div>
-                        <select value={this.state.category} onChange={this.handleTextInput} name='category' required>
+                        <select className='create-select' value={this.state.category} onChange={this.handleTextInput} name='category' required>
                             <option value=''> select an option </option>
                             <option value='auto'>Auto</option>
                             <option value='utensils'>Utensils</option>
@@ -215,12 +215,12 @@ class Dashboard extends Component {
                     </div>
 
                     <div>
-                        <textarea value={this.state.description} name="description" rows="10" cols="30" onChange={this.handleTextInput} placeholder='Description...'/>
+                        <textarea className='create-textarea' value={this.state.description} name="description" rows="10" cols="30" onChange={this.handleTextInput} placeholder='Description...'/>
                     </div>
 
                     <div>
                         {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
-                        <input value={this.state.image} className='login-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
+                        <input value={this.state.image} className='create-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
                     </div>
 
                     <button className='login-btn'>Create</button>
