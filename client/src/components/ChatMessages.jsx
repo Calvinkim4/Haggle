@@ -4,7 +4,7 @@ import ChatMessage from './ChatMessage';
 
 class ChatMessages extends React.Component {
   componentDidUpdate() {
-    const messageList = document.getElementById('messageList');
+    const messageList = document.getElementById('message-list');
     messageList.scrollTop = messageList.scrollHeight;
   }
 
@@ -16,7 +16,7 @@ class ChatMessages extends React.Component {
       });
 
     return (
-      <div id='messageList'>
+      <div id='message-list' className='message-list' >
         { messages }
       </div>
     );

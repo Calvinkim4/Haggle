@@ -135,13 +135,13 @@ class Dashboard extends Component {
 
         const allItems = this.state.items ?  this.state.items.map(item => {
             return (
-                <div key={item.id}>
-                   <h3 id={item.id} name={item.name} category={item.category}>{item.name}</h3>
-                   <h3 id={item.id} name={item.name} category={item.category}>{item.category}</h3>
-                   <p id={item.id} name={item.name} category={item.category}>{item.description}</p>
+                <div key={item.id} className='item-container'>
+                   <h3 id={item.id} className='item-name' name={item.name} category={item.category}>{item.name}</h3>
+                   <h3 id={item.id} className='item-category' name={item.name} category={item.category}>{item.category}</h3>
                    <img className='item-image' src={item.image} alt='item'/>
-                    <button value={item.id} onClick={this.showModal}>Update</button> 
-                    <button value={item.id} onClick={this.onDeleteClick}>Delete</button> 
+                   <button className='crud-button' value={item.id} onClick={this.showModal}>Update</button> 
+                    <button className='crud-button' value={item.id} onClick={this.onDeleteClick}>Delete</button> 
+                   <p id={item.id} className='item-desc' name={item.name} category={item.category}>{item.description}</p>
                 </div>
                 
             )
@@ -149,13 +149,13 @@ class Dashboard extends Component {
 
         const modal = (this.state.show && this.state.updatedItem) ? 
             <div className='modal'>
-              <section className="modal-content">
+              <section className="modal-content" id='modal-content-id'>
               <form onSubmit={this.onUpdateClick}>
                 <label htmlFor='name'>
-                  <input type='text' name='name' value={this.state.name} onChange={ this.onItemFormChange } required/>
+                  <input type='text' className='create-input' name='name' value={this.state.name} onChange={ this.onItemFormChange } required/>
                 </label>
                 <label htmlFor='category'>
-                    <select value={this.state.category} onChange={this.handleTextInput} name='category' required>
+                    <select  className='create-select' value={this.state.category} onChange={this.handleTextInput} name='category' required>
                         <option value=''> select an option </option>
                         <option value='auto'>Auto</option>
                         <option value='utensils'>Utensils</option>
@@ -167,24 +167,24 @@ class Dashboard extends Component {
                         <option value='services'>Services</option>
                         <option value='tools'>Tools</option>
                         <option value='furniture'>Furniture</option>
-                        <option value='antiques'>Antiques</option>
+                        <option value='antiques'>I'm a total square</option>
                         <option value='junk'>Junk</option>
                     </select>
                   {/* <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/> */}
                 </label>
 
                 <div>
-                    <textarea name="description" rows="10" cols="30" value={this.state.description} onChange={this.handleTextInput}/>
+                    <textarea name="description" className='create-textarea' rows="10" cols="30" value={this.state.description} onChange={this.handleTextInput}/>
                 </div>
 
                 <div>
                     {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
-                    <input className='login-input' type='text' name='image' onChange={this.handleTextInput} value={this.state.image} required/>
+                    <input className='create-input' type='text' name='image' onChange={this.handleTextInput} value={this.state.image} required/>
                 </div>
 
-                <button type='submit'>Update Item</button>
+                <button className='update-btn create-button' type='submit'>Update</button>
               </form>
-                <button onClick={this.hideModal}>Close</button>
+                <button className='cancel-btn create-button' onClick={this.hideModal}>Close</button>
               </section>
             </div> : null;
 
@@ -223,13 +223,19 @@ class Dashboard extends Component {
                         <input value={this.state.image} className='create-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
                     </div>
 
-                    <button className='login-btn'>Create</button>
+                    <button className='create-button'>Create</button>
                 </form>
-                {allItems}
+                
+                 <ChatBox username={this.props.username}/>
 
-                 {modal}
+                
 
-                 <ChatBox />
+                <div className='items-container'>
+                    {allItems}
+                </div>
+                 
+                {modal} 
+
 
             </div>
         )

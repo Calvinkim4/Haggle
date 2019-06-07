@@ -27,9 +27,12 @@ class ChatSend extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmitForm}>
-        <input type="text" onChange={this.onTextChangeForm} value={this.state.chatSend} placeholder="Message..." required />
-      </form>
+      <div className='chat-send-div'>
+        <form onSubmit={this.onSubmitForm}>
+          <input className='chat-send-input' type="text" onChange={this.onTextChangeForm} value={this.state.chatSend} placeholder="Message..." required />
+        </form>
+      </div>
+      
     );
   }
 }

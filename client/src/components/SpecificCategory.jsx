@@ -33,7 +33,7 @@ class SpecificCategory extends Component {
             return <SpecificItem item={item} key={item.id}/>   
         }): null;
         return(
-            <div>
+            <div className='items-container' id='items-container-cont'>
                 {/* <h1>{this.props.category}</h1> */}
                 {allItems}
             </div>

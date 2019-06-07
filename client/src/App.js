@@ -109,10 +109,10 @@ class App extends Component {
           <Route exact path='/marketplace' render={(props) => <MarketPlace {...props} setCategory={this.setCategory} category={this.state.category}/>}/> 
           <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category}/>}/>    
           {/* <Route exact path='/home' component={About}/> */}
-          <Route exact path='/dashboard' render={(props) => <Container userId={this.state.user.id} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} signOut={this.signOut} {...props}/>}/>
+          <Route exact path='/dashboard' render={(props) => <Container userId={this.state.user.id} username={this.state.user.username} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} signOut={this.signOut} {...props}/>}/>
         </main>
 
-        <Footer />
+        {/* <Footer /> */}
         
       </div>
     )

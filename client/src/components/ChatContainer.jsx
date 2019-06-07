@@ -41,7 +41,7 @@ class ChatContainer extends React.Component {
 
     render() {
         return (
-          <div>
+          <div className='chat-container'>
             <ChatMessages messages={this.state.messages} />
             <ChatSend onSend={this.sendMessage} />
           </div>
