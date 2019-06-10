@@ -4,7 +4,7 @@
 Web app that a user can safely use to trade with other users. It does not involve money but other items other users might be interested in. Users can sort by categories and view items by that category. The users must agree to the transaction and the values of their items.
 
 # Technologies
-HTML/CSS, REACT, EXPRESS
+HTML/CSS, REACT, EXPRESS, SOCKET.IO
 
 # User Stories
 User- Jack Ma <br/>
