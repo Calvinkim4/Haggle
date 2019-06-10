@@ -158,7 +158,7 @@ class Dashboard extends Component {
                         <option value='auto'>Auto</option>
                         <option value='utensils'>Utensils</option>
                         <option value='electronics'>Electronics</option>
-                        <option value='aparrel'>Aparrel</option>
+                        <option value='apparel'>Apparel</option>
                         <option value='jewelry'>Jewelry</option>
                         <option value='housing'>Housing</option>
                         <option value='gaming'>Gaming</option>
@@ -197,7 +197,7 @@ class Dashboard extends Component {
                             <option value='auto'>Auto</option>
                             <option value='utensils'>Utensils</option>
                             <option value='electronics'>Electronics</option>
-                            <option value='aparrel'>Aparrel</option>
+                            <option value='apparel'>Apparel</option>
                             <option value='jewelry'>Jewelry</option>
                             <option value='housing'>Housing</option>
                             <option value='gaming'>Gaming</option>
