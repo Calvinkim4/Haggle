@@ -1,23 +1,17 @@
 # Haggle
 
 ![alt text](https://user-images.githubusercontent.com/10161700/59198522-edd8ae80-8b61-11e9-96f0-00425e7eda0c.png "screenshot")
-
-
-
-
-
-
-
-
-
-
+<br/>
+<br/>
 ![alt text](https://user-images.githubusercontent.com/10161700/59198724-6c355080-8b62-11e9-9db0-b10c3b3488f9.png "screenshot2")
-
-
+<br/>
+<br/>
 ![alt text](https://user-images.githubusercontent.com/10161700/59198591-1a8cc600-8b62-11e9-8290-3cd56b8dd40f.png "screenshot3")
-
-
+<br/>
+<br/>
 ![alt text](https://user-images.githubusercontent.com/10161700/59198698-5aec4400-8b62-11e9-8b72-ff7bb734e40a.png "screenshot4")
+<br/>
+<br/>
 
 # Description
 Web app that a user can safely use to trade with other users. It does not involve money but other items other users might be interested in. Users can sort by categories and view items by that category. The users must agree to the transaction and the values of their items.
