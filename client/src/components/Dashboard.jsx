@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { createItem, getAllItems, getItem, updateItem, deleteItem} from '../services/itemService';
 import ChatBox from './ChatBox';
-// import MarketPlace from './MarketPlace';
-// import { Link, Route } from 'react-router-dom';
 
 class Dashboard extends Component {
     constructor(){
@@ -170,7 +168,6 @@ class Dashboard extends Component {
                         <option value='antiques'>I'm a total square</option>
                         <option value='junk'>Junk</option>
                     </select>
-                  {/* <input type='text' name='category' placeholder={this.state.updatedItem.category} onChange={ this.onItemFormChange } required/> */}
                 </label>
 
                 <div>
@@ -178,7 +175,6 @@ class Dashboard extends Component {
                 </div>
 
                 <div>
-                    {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
                     <input className='create-input' type='text' name='image' onChange={this.handleTextInput} value={this.state.image} required/>
                 </div>
 
@@ -211,7 +207,6 @@ class Dashboard extends Component {
                             <option value='antiques'>Antiques</option>
                             <option value='junk'>Junk</option>
                         </select>
-                        {/* <input className='login-input' type='text' name='category' onChange={this.handleTextInput} placeholder='Category' required/> */}
                     </div>
 
                     <div>
@@ -219,7 +214,6 @@ class Dashboard extends Component {
                     </div>
 
                     <div>
-                        {/* <input type='file' name='image' onChange={this.handleTextInput}/> */}
                         <input value={this.state.image} className='create-input' type='text' name='image' onChange={this.handleTextInput} placeholder='Image URL' required/>
                     </div>
 

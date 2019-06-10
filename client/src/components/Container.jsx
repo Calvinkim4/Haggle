@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-// import { Route, Redirect } from 'react-router-dom';
 import Dashboard from './Dashboard';
-// import MarketPlace from './MarketPlace';
-// import SpecificCategory from './SpecificCategory';
-// import Header from './Header';
 import Login from './Login';
 import Signup from './Signup';
 
@@ -12,13 +8,9 @@ class Container extends Component {
     constructor() {
         super()
         this.state = {
-            // category: ''
+
         }
     }
-
-    // componentDidMount = () => {
-    //     localStorage.clear();
-    // }
 
     render() {
         return (

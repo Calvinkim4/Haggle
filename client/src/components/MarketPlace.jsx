@@ -9,24 +9,6 @@ class MarketPlace extends Component {
         }
     }
 
-    // componentDidMount = () => {
-    //     const savedCategory = localStorage.getItem('category') === 'true';
-    //     this.setState({
-    //         category: savedCategory
-    //     })
-
-    //     console.log(localStorage.getItem('category'))
-    // }
-
-    // setCategory = (event) => {
-    //     let value = event.target.type;
-    //     this.setState({
-    //         category: value
-    //     })
-
-    //     localStorage.setItem('category', value);
-    //  }
-
     render() {
         return (
             <div className='category-container'>
@@ -43,7 +25,6 @@ class MarketPlace extends Component {
                 <Link to='/category' className='category-div' type="Antiques" onClick={this.props.setCategory}>Antiques</Link>
                 <Link to='/category' className='category-div' type="Junk" onClick={this.props.setCategory}>Junk</Link>
 
-                {/* <h1>{this.props.category}</h1> */}
             </div>
         )
     }

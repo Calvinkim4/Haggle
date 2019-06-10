@@ -30,11 +30,10 @@ class SpecificCategory extends Component {
 
     render() {
         const allItems = this.state.items ?  this.state.items.map(item => {
-            return <SpecificItem item={item} key={item.id}/>   
+            return <SpecificItem item={item} key={item.id} isSignedIn={this.props.isSignedIn}/>   
         }): null;
         return(
             <div className='items-container' id='items-container-cont'>
-                {/* <h1>{this.props.category}</h1> */}
                 {allItems}
             </div>
         )

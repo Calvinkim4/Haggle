@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
 
 class Signup extends Component {
   constructor () {
@@ -23,7 +22,9 @@ class Signup extends Component {
         email, password
       })
     } catch (e) {
-      console.log(e.message)
+      this.setState({ 
+        showError: true 
+      })
     }
   }
 
@@ -38,7 +39,6 @@ class Signup extends Component {
 
   render () {
     const { showError } = this.state;
-    // const { isSignedIn } = this.props;
 
     let errorMessage
 
@@ -49,10 +49,6 @@ class Signup extends Component {
         </div>
       )
     }
-
-    // if (isSignedIn) {
-    //   return <Redirect to='/dashboard' />
-    // }
 
     return (
       <div>

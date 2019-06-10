@@ -9,7 +9,6 @@ const api = axios.create({
 export const getAllFromCategory = async (category) => {
     try {
         const response = await api.get(`/category/${category.toLowerCase()}`);
-        console.log(response)
         return response.data;
     } catch (e) {
         console.log(e.message)

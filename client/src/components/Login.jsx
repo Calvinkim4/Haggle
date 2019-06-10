@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
   constructor () {
@@ -45,7 +44,6 @@ class Login extends Component {
 
   render () {
     const { showError } = this.state;
-    // const { isSignedIn } = this.props;
 
     let errorMessage
 
@@ -56,10 +54,6 @@ class Login extends Component {
         </div>
       )
     }
-
-    // if (isSignedIn) {
-    //   return <Redirect to='/marketplace' />
-    // }
 
     return (
       <div>

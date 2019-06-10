@@ -4,7 +4,7 @@ class ChatMessage extends React.Component {
     render() {
         const fromMe = this.props.fromMe ? 'from-me' : '';
         return (
-          <div className='indiv-message' className={`message-${fromMe}`}>
+          <div className={`indiv-message message-${fromMe}`}>
             <div className='username'>
               { this.props.username }
             </div>

@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import authService from './services/authService';
 import { login, getProfile, signUp } from './services/apiService';
-// import Login from './components/Login';
-// import Signup from './components/Signup';
-// import Dashboard from './components/Dashboard';
 import MarketPlace from './components/MarketPlace';
 import { Link, Route, Redirect } from 'react-router-dom';
-// import Header from './components/Header';
 import SpecificCategory from './components/SpecificCategory';
 import Container from './components/Container';
-// import Contact from './components/Contact';
-import Footer from './components/Footer';
 
 class App extends Component {
   constructor() {
@@ -35,7 +29,7 @@ class App extends Component {
         user: fetchedUser
       })
     } catch (error) {
-      //console.log('Issue fetching token')
+      console.log('Issue fetching token')
     }
   }
 
@@ -96,10 +90,9 @@ class App extends Component {
     const { isSignedIn } = this.state  
     return (
       <div className="App">
-        <Link className='nav-bar-link' to='/home'><h1 className='title'>Haggle</h1></Link>
+        <Link className='nav-bar-link' to='/marketplace'><h1 className='title'>Haggle</h1></Link>
         <h2>Trade <span className='shit'>Shit</span> For Better <span className='shit'>Shit</span></h2>
         <nav className='nav-bar'>
-          {/* <Link className='nav-bar-link' to='/home'><li>Home</li></Link> */}
           <Link className='nav-bar-link' to='/marketplace'><li>MarketPlace</li></Link>
           <Link className='nav-bar-link' to='dashboard'><li>{this.returnNavName(isSignedIn)}</li></Link>
         </nav>
@@ -107,12 +100,9 @@ class App extends Component {
         <main>
           <Route exact path="/" render={() => (<Redirect to="/marketplace"/>)}/>
           <Route exact path='/marketplace' render={(props) => <MarketPlace {...props} setCategory={this.setCategory} category={this.state.category}/>}/> 
-          <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category}/>}/>    
-          {/* <Route exact path='/home' component={About}/> */}
+          <Route exact path='/category' render={(props) => <SpecificCategory {...props} category={this.state.category} isSignedIn={isSignedIn}/>}/>    
           <Route exact path='/dashboard' render={(props) => <Container userId={this.state.user.id} username={this.state.user.username} isSignedIn={isSignedIn} handleLogin={this.loginUser} handleSignUp={this.signUpUser} signOut={this.signOut} {...props}/>}/>
         </main>
-
-        {/* <Footer /> */}
         
       </div>
     )
