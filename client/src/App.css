@@ -427,14 +427,14 @@ button:focus {
 }
 
 .item-name {
-  margin: 0 35px;
+  margin: 0 0 0 35px;
   display: inline;
   float: left;
   font-size: 25px;
 }
 
 .item-category {
-  margin: 0 35px;
+  margin: 0 35px 0 0;
   display: inline;
   float: right;
   font-size: 25px;
