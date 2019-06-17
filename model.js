@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 
-const sequelize = new Sequelize({
+const sequelize = new Sequelize((process.env.DATABASE_URL || 'postgres://localhost:5432/haggle_db'),{
   database: 'haggle_db',
   dialect: 'postgres',
   define: {
