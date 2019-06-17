@@ -3,7 +3,7 @@ import ChatMessages from './ChatMessages';
 import ChatSend from './ChatSend';
 import io from 'socket.io-client';
 
-const url = 'http://localhost:3001'
+const url = process.env.REACT_APP_BASE_URL;
 
 class ChatContainer extends React.Component {
     constructor(props) {
